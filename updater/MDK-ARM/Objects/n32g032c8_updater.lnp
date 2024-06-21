@@ -1,0 +1,17 @@
+--cpu Cortex-M0
+".\objects\startup_n32g032.o"
+".\objects\system_n32g032.o"
+".\objects\misc.o"
+".\objects\n32g032_exti.o"
+".\objects\n32g032_flash.o"
+".\objects\n32g032_gpio.o"
+".\objects\n32g032_rcc.o"
+".\objects\n32g032_usart.o"
+".\objects\main.o"
+".\objects\n32g032_it.o"
+".\objects\systick.o"
+".\objects\iap.o"
+--library_type=microlib --strict --scatter ".\Objects\n32g032c8_updater.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\n32g032c8_updater.map" -o .\Objects\n32g032c8_updater.axf

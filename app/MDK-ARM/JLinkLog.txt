@@ -1,0 +1,9 @@
+T2494 18307:132 SEGGER J-Link V6.40 Log File (0000ms, 69738ms total)
+T2494 18307:132 DLL Compiled: Oct 26 2018 15:06:02 (0000ms, 69738ms total)
+T2494 18307:132 Logging started @ 2023-07-18 14:52 (0000ms, 69738ms total)
+T2494 18307:132 JLINK_SetWarnOutHandler(...) (0000ms, 69738ms total)
+T2494 18307:132 JLINK_OpenEx(...)Out of sync , resynchronizing...Out of sync , resynchronizing...Out of sync , resynchronizing...
+  ***** Error: Cannot connect to J-Link via USB.Device "N32G032C8" selected.  returns "Cannot connect to J-Link via USB." (2272794ms, 2342532ms total)
+T2494 20699:865 JLINK_Close() (0004ms, 2342536ms total)
+T2494 20699:865  (0004ms, 2342536ms total)
+T2494 20699:865 Closed (0004ms, 2342536ms total)

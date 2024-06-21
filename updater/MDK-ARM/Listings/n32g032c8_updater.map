@@ -1,0 +1,667 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    startup_n32g032.o(RESET) refers to startup_n32g032.o(STACK) for __initial_sp
+    startup_n32g032.o(RESET) refers to startup_n32g032.o(.text) for Reset_Handler
+    startup_n32g032.o(RESET) refers to n32g032_it.o(i.NMI_Handler) for NMI_Handler
+    startup_n32g032.o(RESET) refers to n32g032_it.o(i.HardFault_Handler) for HardFault_Handler
+    startup_n32g032.o(RESET) refers to n32g032_it.o(i.SVC_Handler) for SVC_Handler
+    startup_n32g032.o(RESET) refers to n32g032_it.o(i.PendSV_Handler) for PendSV_Handler
+    startup_n32g032.o(RESET) refers to n32g032_it.o(i.SysTick_Handler) for SysTick_Handler
+    startup_n32g032.o(RESET) refers to n32g032_it.o(i.USART1_2_IRQHandler) for USART1_2_IRQHandler
+    startup_n32g032.o(.text) refers to system_n32g032.o(i.SystemInit) for SystemInit
+    startup_n32g032.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_n32g032.o(i.SetSysClock) refers to system_n32g032.o(.data) for SystemCoreClock
+    system_n32g032.o(i.SystemCoreClockUpdate) refers to uidiv.o(.text) for __aeabi_uidivmod
+    system_n32g032.o(i.SystemCoreClockUpdate) refers to system_n32g032.o(.data) for SystemCoreClock
+    system_n32g032.o(i.SystemCoreClockUpdate) refers to system_n32g032.o(.constdata) for AHBPrescTable
+    system_n32g032.o(i.SystemInit) refers to system_n32g032.o(i.SetSysClock) for SetSysClock
+    misc.o(i.NVIC_Init) refers to misc.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    n32g032_flash.o(i.FLASH_ConfigALLOptionByte) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    n32g032_flash.o(i.FLASH_ConfigALLOptionByte) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_ConfigALLOptionByte) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_ConfigUserOB) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    n32g032_flash.o(i.FLASH_ConfigUserOB) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionSTS) for FLASH_GetReadOutProtectionSTS
+    n32g032_flash.o(i.FLASH_ConfigUserOB) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_ConfigUserOB) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_EnWriteProtection) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    n32g032_flash.o(i.FLASH_EnWriteProtection) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_EnWriteProtection) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_EraseOB) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    n32g032_flash.o(i.FLASH_EraseOB) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionSTS) for FLASH_GetReadOutProtectionSTS
+    n32g032_flash.o(i.FLASH_EraseOB) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_EraseOB) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_EraseOnePage) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_EraseOnePage) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_MassErase) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_MassErase) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_ProgramOBData) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    n32g032_flash.o(i.FLASH_ProgramOBData) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_ProgramOBData) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_ProgramWord) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_ProgramWord) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_ReadOutProtectionL1) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    n32g032_flash.o(i.FLASH_ReadOutProtectionL1) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_ReadOutProtectionL1) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_ReadOutProtectionL2_ENABLE) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionSTS) for FLASH_GetReadOutProtectionSTS
+    n32g032_flash.o(i.FLASH_ReadOutProtectionL2_ENABLE) refers to n32g032_flash.o(i.FLASH_GetReadOutProtectionL2STS) for FLASH_GetReadOutProtectionL2STS
+    n32g032_flash.o(i.FLASH_ReadOutProtectionL2_ENABLE) refers to n32g032_flash.o(i.FLASH_ClearFlag) for FLASH_ClearFlag
+    n32g032_flash.o(i.FLASH_ReadOutProtectionL2_ENABLE) refers to n32g032_flash.o(i.FLASH_WaitForLastOpt) for FLASH_WaitForLastOpt
+    n32g032_flash.o(i.FLASH_WaitForLastOpt) refers to n32g032_flash.o(i.FLASH_GetSTS) for FLASH_GetSTS
+    n32g032_gpio.o(i.GPIO_AFIOInitDefault) refers to n32g032_rcc.o(i.RCC_EnableAPB2PeriphReset) for RCC_EnableAPB2PeriphReset
+    n32g032_gpio.o(i.GPIO_DeInit) refers to n32g032_rcc.o(i.RCC_EnableAPB2PeriphReset) for RCC_EnableAPB2PeriphReset
+    n32g032_rcc.o(i.RCC_GetClocksFreqValue) refers to uidiv.o(.text) for __aeabi_uidivmod
+    n32g032_rcc.o(i.RCC_GetClocksFreqValue) refers to n32g032_rcc.o(.constdata) for s_ApbAhbPresTable
+    n32g032_rcc.o(i.RCC_WaitHseStable) refers to n32g032_rcc.o(i.RCC_GetFlagStatus) for RCC_GetFlagStatus
+    n32g032_rcc.o(i.RCC_WaitHsiStable) refers to n32g032_rcc.o(i.RCC_GetFlagStatus) for RCC_GetFlagStatus
+    n32g032_usart.o(i.USART_DeInit) refers to n32g032_rcc.o(i.RCC_EnableAPB2PeriphReset) for RCC_EnableAPB2PeriphReset
+    n32g032_usart.o(i.USART_DeInit) refers to n32g032_rcc.o(i.RCC_EnableAPB1PeriphReset) for RCC_EnableAPB1PeriphReset
+    n32g032_usart.o(i.USART_Init) refers to n32g032_rcc.o(i.RCC_GetClocksFreqValue) for RCC_GetClocksFreqValue
+    n32g032_usart.o(i.USART_Init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    main.o(i.main) refers to iap.o(i.iap_init) for iap_init
+    main.o(i.main) refers to iap.o(i.iap_rx_handler) for iap_rx_handler
+    main.o(i.main) refers to iap.o(i.iap_tx_handler) for iap_tx_handler
+    n32g032_it.o(i.SysTick_Handler) refers to systick.o(i.delay_decrement) for delay_decrement
+    n32g032_it.o(i.USART1_2_IRQHandler) refers to n32g032_usart.o(i.USART_GetIntStatus) for USART_GetIntStatus
+    n32g032_it.o(i.USART1_2_IRQHandler) refers to n32g032_usart.o(i.USART_ReceiveData) for USART_ReceiveData
+    n32g032_it.o(i.USART1_2_IRQHandler) refers to iap.o(i.iap_rx_data) for iap_rx_data
+    systick.o(i.delay_1ms) refers to systick.o(.data) for delay
+    systick.o(i.delay_decrement) refers to systick.o(.data) for delay
+    systick.o(i.systick_config) refers to uidiv.o(.text) for __aeabi_uidivmod
+    systick.o(i.systick_config) refers to systick.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    systick.o(i.systick_config) refers to system_n32g032.o(.data) for SystemCoreClock
+    iap.o(i.iap_do_erase) refers to iap.o(i.iap_uart_ctrl) for iap_uart_ctrl
+    iap.o(i.iap_do_erase) refers to n32g032_flash.o(i.FLASH_Unlock) for FLASH_Unlock
+    iap.o(i.iap_do_erase) refers to n32g032_flash.o(i.FLASH_EraseOnePage) for FLASH_EraseOnePage
+    iap.o(i.iap_do_erase) refers to n32g032_flash.o(i.FLASH_Lock) for FLASH_Lock
+    iap.o(i.iap_do_erase) refers to iap.o(.data) for g_flash_addr
+    iap.o(i.iap_do_program) refers to iap.o(i.iap_uart_ctrl) for iap_uart_ctrl
+    iap.o(i.iap_do_program) refers to n32g032_flash.o(i.FLASH_Unlock) for FLASH_Unlock
+    iap.o(i.iap_do_program) refers to n32g032_flash.o(i.FLASH_ProgramWord) for FLASH_ProgramWord
+    iap.o(i.iap_do_program) refers to n32g032_flash.o(i.FLASH_Lock) for FLASH_Lock
+    iap.o(i.iap_init) refers to n32g032_rcc.o(i.RCC_EnableAPB2PeriphClk) for RCC_EnableAPB2PeriphClk
+    iap.o(i.iap_init) refers to n32g032_gpio.o(i.GPIO_InitStruct) for GPIO_InitStruct
+    iap.o(i.iap_init) refers to n32g032_gpio.o(i.GPIO_InitPeripheral) for GPIO_InitPeripheral
+    iap.o(i.iap_init) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    iap.o(i.iap_init) refers to n32g032_usart.o(i.USART_DeInit) for USART_DeInit
+    iap.o(i.iap_init) refers to n32g032_usart.o(i.USART_Init) for USART_Init
+    iap.o(i.iap_init) refers to n32g032_usart.o(i.USART_ConfigInt) for USART_ConfigInt
+    iap.o(i.iap_init) refers to iap.o(i.iap_uart_ctrl) for iap_uart_ctrl
+    iap.o(i.iap_init) refers to iap.o(.data) for g_iap_rx_state
+    iap.o(i.iap_rx_data) refers to iap.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    iap.o(i.iap_rx_data) refers to iap.o(.data) for g_iap_rx_state
+    iap.o(i.iap_rx_data) refers to iap.o(.bss) for g_iap_rx_buffer
+    iap.o(i.iap_rx_handler) refers to iap.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    iap.o(i.iap_rx_handler) refers to iap.o(i.iap_do_reset) for iap_do_reset
+    iap.o(i.iap_rx_handler) refers to iap.o(i.iap_do_erase) for iap_do_erase
+    iap.o(i.iap_rx_handler) refers to iap.o(i.iap_do_program) for iap_do_program
+    iap.o(i.iap_rx_handler) refers to iap.o(.data) for g_iap_state
+    iap.o(i.iap_rx_handler) refers to iap.o(.bss) for g_iap_rx_buffer
+    iap.o(i.iap_tx_handler) refers to n32g032_usart.o(i.USART_GetFlagStatus) for USART_GetFlagStatus
+    iap.o(i.iap_tx_handler) refers to n32g032_usart.o(i.USART_SendData) for USART_SendData
+    iap.o(i.iap_tx_handler) refers to iap.o(.data) for g_iap_tx_sub_id
+    iap.o(i.iap_tx_handler) refers to iap.o(.bss) for g_iap_tx_buffer
+    iap.o(i.iap_uart_ctrl) refers to n32g032_usart.o(i.USART_ConfigInt) for USART_ConfigInt
+    iap.o(i.iap_uart_ctrl) refers to n32g032_usart.o(i.USART_Enable) for USART_Enable
+    iap.o(i.iap_uart_ctrl) refers to iap.o(.data) for g_iap_rx_state
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_n32g032.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_n32g032.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_n32g032.o(HEAP), (512 bytes).
+    Removing system_n32g032.o(.emb_text), (8 bytes).
+    Removing system_n32g032.o(i.SystemCoreClockUpdate), (256 bytes).
+    Removing system_n32g032.o(.constdata), (16 bytes).
+    Removing misc.o(.emb_text), (8 bytes).
+    Removing misc.o(i.SysTick_CLKSourceConfig), (36 bytes).
+    Removing n32g032_exti.o(.emb_text), (8 bytes).
+    Removing n32g032_exti.o(i.EXTI_ClrITPendBit), (12 bytes).
+    Removing n32g032_exti.o(i.EXTI_ClrStatusFlag), (12 bytes).
+    Removing n32g032_exti.o(i.EXTI_DeInit), (28 bytes).
+    Removing n32g032_exti.o(i.EXTI_GetITStatus), (40 bytes).
+    Removing n32g032_exti.o(i.EXTI_GetStatusFlag), (28 bytes).
+    Removing n32g032_exti.o(i.EXTI_InitPeripheral), (136 bytes).
+    Removing n32g032_exti.o(i.EXTI_InitStruct), (16 bytes).
+    Removing n32g032_exti.o(i.EXTI_RTCTimeStampSel), (24 bytes).
+    Removing n32g032_exti.o(i.EXTI_TriggerSWInt), (16 bytes).
+    Removing n32g032_flash.o(.emb_text), (8 bytes).
+    Removing n32g032_flash.o(i.FLASH_ConfigALLOptionByte), (324 bytes).
+    Removing n32g032_flash.o(i.FLASH_ConfigUserOB), (244 bytes).
+    Removing n32g032_flash.o(i.FLASH_EnWriteProtection), (148 bytes).
+    Removing n32g032_flash.o(i.FLASH_EraseOB), (208 bytes).
+    Removing n32g032_flash.o(i.FLASH_GetFlagSTS), (48 bytes).
+    Removing n32g032_flash.o(i.FLASH_GetPrefetchBufSTS), (28 bytes).
+    Removing n32g032_flash.o(i.FLASH_GetReadOutProtectionL2STS), (28 bytes).
+    Removing n32g032_flash.o(i.FLASH_GetReadOutProtectionSTS), (28 bytes).
+    Removing n32g032_flash.o(i.FLASH_GetUserOB), (16 bytes).
+    Removing n32g032_flash.o(i.FLASH_GetWriteProtectionOB), (12 bytes).
+    Removing n32g032_flash.o(i.FLASH_INTConfig), (32 bytes).
+    Removing n32g032_flash.o(i.FLASH_MassErase), (84 bytes).
+    Removing n32g032_flash.o(i.FLASH_PrefetchBufSet), (28 bytes).
+    Removing n32g032_flash.o(i.FLASH_ProgramOBData), (112 bytes).
+    Removing n32g032_flash.o(i.FLASH_ReadOutProtectionL1), (224 bytes).
+    Removing n32g032_flash.o(i.FLASH_ReadOutProtectionL2_ENABLE), (244 bytes).
+    Removing n32g032_flash.o(i.FLASH_SetLatency), (28 bytes).
+    Removing n32g032_gpio.o(.emb_text), (8 bytes).
+    Removing n32g032_gpio.o(i.AFIO_ConfigADCExternalTrigRemap), (84 bytes).
+    Removing n32g032_gpio.o(i.AFIO_ConfigSPINSSMode), (36 bytes).
+    Removing n32g032_gpio.o(i.AFIO_EnableI2CLV), (32 bytes).
+    Removing n32g032_gpio.o(i.AFIO_EnableTIM4CH2), (40 bytes).
+    Removing n32g032_gpio.o(i.AFIO_EnableTscOut), (40 bytes).
+    Removing n32g032_gpio.o(i.GPIO_AFIOInitDefault), (20 bytes).
+    Removing n32g032_gpio.o(i.GPIO_ConfigEXTILine), (64 bytes).
+    Removing n32g032_gpio.o(i.GPIO_ConfigPinLock), (22 bytes).
+    Removing n32g032_gpio.o(i.GPIO_ConfigPinRemap), (132 bytes).
+    Removing n32g032_gpio.o(i.GPIO_DeInit), (152 bytes).
+    Removing n32g032_gpio.o(i.GPIO_DeInitPin), (284 bytes).
+    Removing n32g032_gpio.o(i.GPIO_ReadInputData), (8 bytes).
+    Removing n32g032_gpio.o(i.GPIO_ReadInputDataBit), (20 bytes).
+    Removing n32g032_gpio.o(i.GPIO_ReadOutputData), (8 bytes).
+    Removing n32g032_gpio.o(i.GPIO_ReadOutputDataBit), (20 bytes).
+    Removing n32g032_gpio.o(i.GPIO_ResetBits), (4 bytes).
+    Removing n32g032_gpio.o(i.GPIO_SetBits), (4 bytes).
+    Removing n32g032_gpio.o(i.GPIO_TogglePin), (8 bytes).
+    Removing n32g032_gpio.o(i.GPIO_Write), (4 bytes).
+    Removing n32g032_gpio.o(i.GPIO_WriteBit), (12 bytes).
+    Removing n32g032_rcc.o(.emb_text), (8 bytes).
+    Removing n32g032_rcc.o(i.RCC_ClrFlag), (32 bytes).
+    Removing n32g032_rcc.o(i.RCC_ClrIntPendingBit), (16 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigAdc1mClk), (52 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigAdcHclk), (28 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigAdcPllClk), (52 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigHclk), (32 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigHse), (124 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigHsi), (40 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigInt), (36 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigLPRUNClk), (28 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigLPTIMClk), (28 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigLPUARTClk), (64 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigLse), (60 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigMco), (32 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigMcoClkPre), (28 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigPclk1), (36 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigPclk2), (32 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigPll), (116 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigRngcClk), (52 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigRtcClk), (28 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigSysclk), (28 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigTSCClk), (28 bytes).
+    Removing n32g032_rcc.o(i.RCC_ConfigTim18Clk), (28 bytes).
+    Removing n32g032_rcc.o(i.RCC_DeInit), (92 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnableAHBPeriphClk), (32 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnableAHBPeriphReset), (32 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnableAPB1PeriphClk), (32 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnableClockSecuritySystem), (40 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnableHsi), (36 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnableLsi), (36 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnablePll), (40 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnablePllClockOut), (40 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnableRAMCParityErrorReset), (40 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnableRTCReset), (40 bytes).
+    Removing n32g032_rcc.o(i.RCC_EnableRtcClk), (36 bytes).
+    Removing n32g032_rcc.o(i.RCC_GetFlagStatus), (64 bytes).
+    Removing n32g032_rcc.o(i.RCC_GetIntStatus), (28 bytes).
+    Removing n32g032_rcc.o(i.RCC_GetLPRUNClkSrc), (16 bytes).
+    Removing n32g032_rcc.o(i.RCC_GetLPTIMClkSrc), (16 bytes).
+    Removing n32g032_rcc.o(i.RCC_GetLPUARTClkSrc), (40 bytes).
+    Removing n32g032_rcc.o(i.RCC_GetRTCClkSrc), (16 bytes).
+    Removing n32g032_rcc.o(i.RCC_GetSysclkSrc), (20 bytes).
+    Removing n32g032_rcc.o(i.RCC_GetTSCClkSrc), (16 bytes).
+    Removing n32g032_rcc.o(i.RCC_SetHsiCalibValue), (32 bytes).
+    Removing n32g032_rcc.o(i.RCC_WaitHseStable), (60 bytes).
+    Removing n32g032_rcc.o(i.RCC_WaitHsiStable), (60 bytes).
+    Removing n32g032_usart.o(.emb_text), (8 bytes).
+    Removing n32g032_usart.o(i.USART_ClockInit), (36 bytes).
+    Removing n32g032_usart.o(i.USART_ClockStructInit), (12 bytes).
+    Removing n32g032_usart.o(i.USART_ClrFlag), (22 bytes).
+    Removing n32g032_usart.o(i.USART_ClrIntPendingBit), (32 bytes).
+    Removing n32g032_usart.o(i.USART_ConfigIrDAMode), (20 bytes).
+    Removing n32g032_usart.o(i.USART_ConfigLINBreakDetectLength), (20 bytes).
+    Removing n32g032_usart.o(i.USART_ConfigWakeUpMode), (20 bytes).
+    Removing n32g032_usart.o(i.USART_EnableDMA), (20 bytes).
+    Removing n32g032_usart.o(i.USART_EnableHalfDuplex), (28 bytes).
+    Removing n32g032_usart.o(i.USART_EnableIrDA), (28 bytes).
+    Removing n32g032_usart.o(i.USART_EnableLIN), (32 bytes).
+    Removing n32g032_usart.o(i.USART_EnableRcvWakeUp), (28 bytes).
+    Removing n32g032_usart.o(i.USART_EnableSmartCard), (28 bytes).
+    Removing n32g032_usart.o(i.USART_SendBreak), (10 bytes).
+    Removing n32g032_usart.o(i.USART_SetAddr), (20 bytes).
+    Removing n32g032_usart.o(i.USART_SetGuardTime), (16 bytes).
+    Removing n32g032_usart.o(i.USART_SetPrescaler), (18 bytes).
+    Removing n32g032_usart.o(i.USART_SetSmartCardNACK), (28 bytes).
+    Removing n32g032_usart.o(i.USART_StructInit), (24 bytes).
+    Removing main.o(.emb_text), (8 bytes).
+    Removing n32g032_it.o(.emb_text), (8 bytes).
+    Removing systick.o(.emb_text), (8 bytes).
+    Removing systick.o(i.NVIC_SetPriority), (120 bytes).
+    Removing systick.o(i.delay_1ms), (20 bytes).
+    Removing systick.o(i.systick_config), (88 bytes).
+    Removing iap.o(.emb_text), (8 bytes).
+
+129 unused section(s) (total 6584 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ..\..\firmware\CMSIS\device\startup\startup_n32g032.s 0x00000000   Number         0  startup_n32g032.o ABSOLUTE
+    ..\..\firmware\CMSIS\device\system_n32g032.c 0x00000000   Number         0  system_n32g032.o ABSOLUTE
+    ..\..\firmware\n32g032_std_periph_driver\src\misc.c 0x00000000   Number         0  misc.o ABSOLUTE
+    ..\..\firmware\n32g032_std_periph_driver\src\n32g032_exti.c 0x00000000   Number         0  n32g032_exti.o ABSOLUTE
+    ..\..\firmware\n32g032_std_periph_driver\src\n32g032_flash.c 0x00000000   Number         0  n32g032_flash.o ABSOLUTE
+    ..\..\firmware\n32g032_std_periph_driver\src\n32g032_gpio.c 0x00000000   Number         0  n32g032_gpio.o ABSOLUTE
+    ..\..\firmware\n32g032_std_periph_driver\src\n32g032_rcc.c 0x00000000   Number         0  n32g032_rcc.o ABSOLUTE
+    ..\..\firmware\n32g032_std_periph_driver\src\n32g032_usart.c 0x00000000   Number         0  n32g032_usart.o ABSOLUTE
+    ..\\..\\firmware\\CMSIS\\device\\system_n32g032.c 0x00000000   Number         0  system_n32g032.o ABSOLUTE
+    ..\\..\\firmware\\n32g032_std_periph_driver\\src\\misc.c 0x00000000   Number         0  misc.o ABSOLUTE
+    ..\\..\\firmware\\n32g032_std_periph_driver\\src\\n32g032_exti.c 0x00000000   Number         0  n32g032_exti.o ABSOLUTE
+    ..\\..\\firmware\\n32g032_std_periph_driver\\src\\n32g032_flash.c 0x00000000   Number         0  n32g032_flash.o ABSOLUTE
+    ..\\..\\firmware\\n32g032_std_periph_driver\\src\\n32g032_gpio.c 0x00000000   Number         0  n32g032_gpio.o ABSOLUTE
+    ..\\..\\firmware\\n32g032_std_periph_driver\\src\\n32g032_rcc.c 0x00000000   Number         0  n32g032_rcc.o ABSOLUTE
+    ..\\..\\firmware\\n32g032_std_periph_driver\\src\\n32g032_usart.c 0x00000000   Number         0  n32g032_usart.o ABSOLUTE
+    ..\\src\\iap.c                           0x00000000   Number         0  iap.o ABSOLUTE
+    ..\\src\\main.c                          0x00000000   Number         0  main.o ABSOLUTE
+    ..\\src\\n32g032_it.c                    0x00000000   Number         0  n32g032_it.o ABSOLUTE
+    ..\\src\\systick.c                       0x00000000   Number         0  systick.o ABSOLUTE
+    ..\src\iap.c                             0x00000000   Number         0  iap.o ABSOLUTE
+    ..\src\main.c                            0x00000000   Number         0  main.o ABSOLUTE
+    ..\src\n32g032_it.c                      0x00000000   Number         0  n32g032_it.o ABSOLUTE
+    ..\src\systick.c                         0x00000000   Number         0  systick.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    RESET                                    0x0800e000   Section      192  startup_n32g032.o(RESET)
+    .ARM.Collect$$$$00000000                 0x0800e0c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x0800e0c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x0800e0c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x0800e0c8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x0800e0c8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x0800e0c8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x0800e0d0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x0800e0d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x0800e0d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x0800e0d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x0800e0d4   Section       28  startup_n32g032.o(.text)
+    .text                                    0x0800e0f0   Section        0  uidiv.o(.text)
+    .text                                    0x0800e11c   Section       36  init.o(.text)
+    i.FLASH_ClearFlag                        0x0800e140   Section        0  n32g032_flash.o(i.FLASH_ClearFlag)
+    i.FLASH_EraseOnePage                     0x0800e150   Section        0  n32g032_flash.o(i.FLASH_EraseOnePage)
+    i.FLASH_GetSTS                           0x0800e1a8   Section        0  n32g032_flash.o(i.FLASH_GetSTS)
+    i.FLASH_Lock                             0x0800e1e4   Section        0  n32g032_flash.o(i.FLASH_Lock)
+    i.FLASH_ProgramWord                      0x0800e1f8   Section        0  n32g032_flash.o(i.FLASH_ProgramWord)
+    i.FLASH_Unlock                           0x0800e248   Section        0  n32g032_flash.o(i.FLASH_Unlock)
+    i.FLASH_WaitForLastOpt                   0x0800e260   Section        0  n32g032_flash.o(i.FLASH_WaitForLastOpt)
+    i.GPIO_InitPeripheral                    0x0800e288   Section        0  n32g032_gpio.o(i.GPIO_InitPeripheral)
+    i.GPIO_InitStruct                        0x0800e480   Section        0  n32g032_gpio.o(i.GPIO_InitStruct)
+    i.HardFault_Handler                      0x0800e49c   Section        0  n32g032_it.o(i.HardFault_Handler)
+    i.NMI_Handler                            0x0800e4a0   Section        0  n32g032_it.o(i.NMI_Handler)
+    i.NVIC_Init                              0x0800e4a4   Section        0  misc.o(i.NVIC_Init)
+    i.NVIC_SetPriority                       0x0800e4e8   Section        0  misc.o(i.NVIC_SetPriority)
+    NVIC_SetPriority                         0x0800e4e9   Thumb Code   110  misc.o(i.NVIC_SetPriority)
+    i.PendSV_Handler                         0x0800e560   Section        0  n32g032_it.o(i.PendSV_Handler)
+    i.RCC_EnableAPB1PeriphReset              0x0800e564   Section        0  n32g032_rcc.o(i.RCC_EnableAPB1PeriphReset)
+    i.RCC_EnableAPB2PeriphClk                0x0800e584   Section        0  n32g032_rcc.o(i.RCC_EnableAPB2PeriphClk)
+    i.RCC_EnableAPB2PeriphReset              0x0800e5a4   Section        0  n32g032_rcc.o(i.RCC_EnableAPB2PeriphReset)
+    i.RCC_GetClocksFreqValue                 0x0800e5c4   Section        0  n32g032_rcc.o(i.RCC_GetClocksFreqValue)
+    i.SVC_Handler                            0x0800e744   Section        0  n32g032_it.o(i.SVC_Handler)
+    i.SetSysClock                            0x0800e748   Section        0  system_n32g032.o(i.SetSysClock)
+    SetSysClock                              0x0800e749   Thumb Code   254  system_n32g032.o(i.SetSysClock)
+    i.SysTick_Handler                        0x0800e864   Section        0  n32g032_it.o(i.SysTick_Handler)
+    i.SystemInit                             0x0800e86c   Section        0  system_n32g032.o(i.SystemInit)
+    i.USART1_2_IRQHandler                    0x0800e904   Section        0  n32g032_it.o(i.USART1_2_IRQHandler)
+    i.USART_ConfigInt                        0x0800e968   Section        0  n32g032_usart.o(i.USART_ConfigInt)
+    i.USART_DeInit                           0x0800e9bc   Section        0  n32g032_usart.o(i.USART_DeInit)
+    i.USART_Enable                           0x0800ea38   Section        0  n32g032_usart.o(i.USART_Enable)
+    i.USART_GetFlagStatus                    0x0800ea58   Section        0  n32g032_usart.o(i.USART_GetFlagStatus)
+    i.USART_GetIntStatus                     0x0800ea78   Section        0  n32g032_usart.o(i.USART_GetIntStatus)
+    i.USART_Init                             0x0800ead4   Section        0  n32g032_usart.o(i.USART_Init)
+    i.USART_ReceiveData                      0x0800eb90   Section        0  n32g032_usart.o(i.USART_ReceiveData)
+    i.USART_SendData                         0x0800eb9a   Section        0  n32g032_usart.o(i.USART_SendData)
+    i.__ARM_common_switch8                   0x0800eba2   Section        0  iap.o(i.__ARM_common_switch8)
+    i.__scatterload_copy                     0x0800ebbe   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0800ebcc   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0800ebce   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.delay_decrement                        0x0800ebdc   Section        0  systick.o(i.delay_decrement)
+    i.iap_do_erase                           0x0800ebf4   Section        0  iap.o(i.iap_do_erase)
+    i.iap_do_program                         0x0800ec34   Section        0  iap.o(i.iap_do_program)
+    i.iap_do_reset                           0x0800ec88   Section        0  iap.o(i.iap_do_reset)
+    i.iap_init                               0x0800eca8   Section        0  iap.o(i.iap_init)
+    i.iap_rx_data                            0x0800ed88   Section        0  iap.o(i.iap_rx_data)
+    i.iap_rx_handler                         0x0800ef74   Section        0  iap.o(i.iap_rx_handler)
+    i.iap_tx_handler                         0x0800f118   Section        0  iap.o(i.iap_tx_handler)
+    i.iap_uart_ctrl                          0x0800f1dc   Section        0  iap.o(i.iap_uart_ctrl)
+    i.main                                   0x0800f238   Section        0  main.o(i.main)
+    .constdata                               0x0800f248   Section       64  n32g032_rcc.o(.constdata)
+    s_ApbAhbPresTable                        0x0800f248   Data          16  n32g032_rcc.o(.constdata)
+    s_AdcHclkPresTable                       0x0800f258   Data          16  n32g032_rcc.o(.constdata)
+    s_AdcPllClkPresTable                     0x0800f268   Data          32  n32g032_rcc.o(.constdata)
+    .data                                    0x20000000   Section        4  system_n32g032.o(.data)
+    .data                                    0x20000004   Section        4  systick.o(.data)
+    delay                                    0x20000004   Data           4  systick.o(.data)
+    .data                                    0x20000008   Section       20  iap.o(.data)
+    g_iap_rx_state                           0x20000008   Data           1  iap.o(.data)
+    g_iap_rx_checksum                        0x20000009   Data           1  iap.o(.data)
+    g_iap_rx_idx                             0x2000000a   Data           1  iap.o(.data)
+    g_iap_rx_packet_len                      0x2000000b   Data           1  iap.o(.data)
+    g_rx_grp_id                              0x2000000c   Data           1  iap.o(.data)
+    g_iap_rx_ready                           0x2000000d   Data           1  iap.o(.data)
+    g_iap_tx_sub_id                          0x2000000e   Data           1  iap.o(.data)
+    g_iap_tx_seq                             0x2000000f   Data           1  iap.o(.data)
+    g_flash_block_id                         0x20000010   Data           2  iap.o(.data)
+    g_iap_state                              0x20000012   Data           1  iap.o(.data)
+    g_iap_image_checksum                     0x20000014   Data           2  iap.o(.data)
+    g_flash_addr                             0x20000018   Data           4  iap.o(.data)
+    .bss                                     0x2000001c   Section      144  iap.o(.bss)
+    g_iap_rx_buffer                          0x2000001c   Data         128  iap.o(.bss)
+    g_iap_tx_buffer                          0x2000009c   Data          16  iap.o(.bss)
+    STACK                                    0x200000b0   Section     1024  startup_n32g032.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_Size                           0x000000c0   Number         0  startup_n32g032.o ABSOLUTE
+    __Vectors                                0x0800e000   Data           4  startup_n32g032.o(RESET)
+    __Vectors_End                            0x0800e0c0   Data           0  startup_n32g032.o(RESET)
+    __main                                   0x0800e0c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x0800e0c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x0800e0c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x0800e0c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x0800e0c9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x0800e0c9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x0800e0c9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x0800e0d1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x0800e0d1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x0800e0d5   Thumb Code     8  startup_n32g032.o(.text)
+    ADC_IRQHandler                           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    CAN_IRQHandler                           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    COMP1_2_3_IRQHandler                     0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    DMA_Channel1_2_3_4_IRQHandler            0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    DMA_Channel5_6_7_8_IRQHandler            0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    EXTI0_1_IRQHandler                       0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    EXTI2_3_IRQHandler                       0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    EXTI4_15_IRQHandler                      0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    FLASH_IRQHandler                         0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    HDIV_SQRT_IRQHandler                     0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    I2C1_IRQHandler                          0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    I2C2_IRQHandler                          0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    LPTIM_TIM6_IRQHandler                    0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    LPUART1_2_IRQHandler                     0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    MMU_IRQHandler                           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    PVD_IRQHandler                           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    RAMC_PERR_IRQHandler                     0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    RCC_IRQHandler                           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    RTC_IRQHandler                           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    SAC_IRQHandler                           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    SPI1_IRQHandler                          0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    SPI2_3_IRQHandler                        0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    TIM1_BRK_UP_TRG_COM_IRQHandler           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    TIM1_CC_IRQHandler                       0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    TIM3_IRQHandler                          0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    TIM4_IRQHandler                          0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    TIM8_BRK_UP_TRG_COM_IRQHandler           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    TIM8_CC_IRQHandler                       0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    TSC_IRQHandler                           0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    UART5_6_IRQHandler                       0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    WWDG_IRQHandler                          0x0800e0e7   Thumb Code     0  startup_n32g032.o(.text)
+    __aeabi_uidiv                            0x0800e0f1   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x0800e0f1   Thumb Code    44  uidiv.o(.text)
+    __scatterload                            0x0800e11d   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x0800e11d   Thumb Code     0  init.o(.text)
+    FLASH_ClearFlag                          0x0800e141   Thumb Code    12  n32g032_flash.o(i.FLASH_ClearFlag)
+    FLASH_EraseOnePage                       0x0800e151   Thumb Code    78  n32g032_flash.o(i.FLASH_EraseOnePage)
+    FLASH_GetSTS                             0x0800e1a9   Thumb Code    54  n32g032_flash.o(i.FLASH_GetSTS)
+    FLASH_Lock                               0x0800e1e5   Thumb Code    14  n32g032_flash.o(i.FLASH_Lock)
+    FLASH_ProgramWord                        0x0800e1f9   Thumb Code    70  n32g032_flash.o(i.FLASH_ProgramWord)
+    FLASH_Unlock                             0x0800e249   Thumb Code    12  n32g032_flash.o(i.FLASH_Unlock)
+    FLASH_WaitForLastOpt                     0x0800e261   Thumb Code    40  n32g032_flash.o(i.FLASH_WaitForLastOpt)
+    GPIO_InitPeripheral                      0x0800e289   Thumb Code   478  n32g032_gpio.o(i.GPIO_InitPeripheral)
+    GPIO_InitStruct                          0x0800e481   Thumb Code    24  n32g032_gpio.o(i.GPIO_InitStruct)
+    HardFault_Handler                        0x0800e49d   Thumb Code     4  n32g032_it.o(i.HardFault_Handler)
+    NMI_Handler                              0x0800e4a1   Thumb Code     2  n32g032_it.o(i.NMI_Handler)
+    NVIC_Init                                0x0800e4a5   Thumb Code    64  misc.o(i.NVIC_Init)
+    PendSV_Handler                           0x0800e561   Thumb Code     2  n32g032_it.o(i.PendSV_Handler)
+    RCC_EnableAPB1PeriphReset                0x0800e565   Thumb Code    28  n32g032_rcc.o(i.RCC_EnableAPB1PeriphReset)
+    RCC_EnableAPB2PeriphClk                  0x0800e585   Thumb Code    28  n32g032_rcc.o(i.RCC_EnableAPB2PeriphClk)
+    RCC_EnableAPB2PeriphReset                0x0800e5a5   Thumb Code    28  n32g032_rcc.o(i.RCC_EnableAPB2PeriphReset)
+    RCC_GetClocksFreqValue                   0x0800e5c5   Thumb Code   354  n32g032_rcc.o(i.RCC_GetClocksFreqValue)
+    SVC_Handler                              0x0800e745   Thumb Code     2  n32g032_it.o(i.SVC_Handler)
+    SysTick_Handler                          0x0800e865   Thumb Code     8  n32g032_it.o(i.SysTick_Handler)
+    SystemInit                               0x0800e86d   Thumb Code   128  system_n32g032.o(i.SystemInit)
+    USART1_2_IRQHandler                      0x0800e905   Thumb Code    88  n32g032_it.o(i.USART1_2_IRQHandler)
+    USART_ConfigInt                          0x0800e969   Thumb Code    80  n32g032_usart.o(i.USART_ConfigInt)
+    USART_DeInit                             0x0800e9bd   Thumb Code   108  n32g032_usart.o(i.USART_DeInit)
+    USART_Enable                             0x0800ea39   Thumb Code    26  n32g032_usart.o(i.USART_Enable)
+    USART_GetFlagStatus                      0x0800ea59   Thumb Code    30  n32g032_usart.o(i.USART_GetFlagStatus)
+    USART_GetIntStatus                       0x0800ea79   Thumb Code    86  n32g032_usart.o(i.USART_GetIntStatus)
+    USART_Init                               0x0800ead5   Thumb Code   168  n32g032_usart.o(i.USART_Init)
+    USART_ReceiveData                        0x0800eb91   Thumb Code    10  n32g032_usart.o(i.USART_ReceiveData)
+    USART_SendData                           0x0800eb9b   Thumb Code     8  n32g032_usart.o(i.USART_SendData)
+    __ARM_common_switch8                     0x0800eba3   Thumb Code    28  iap.o(i.__ARM_common_switch8)
+    __scatterload_copy                       0x0800ebbf   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0800ebcd   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0800ebcf   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    delay_decrement                          0x0800ebdd   Thumb Code    20  systick.o(i.delay_decrement)
+    iap_do_erase                             0x0800ebf5   Thumb Code    60  iap.o(i.iap_do_erase)
+    iap_do_program                           0x0800ec35   Thumb Code    84  iap.o(i.iap_do_program)
+    iap_do_reset                             0x0800ec89   Thumb Code    22  iap.o(i.iap_do_reset)
+    iap_init                                 0x0800eca9   Thumb Code   178  iap.o(i.iap_init)
+    iap_rx_data                              0x0800ed89   Thumb Code   464  iap.o(i.iap_rx_data)
+    iap_rx_handler                           0x0800ef75   Thumb Code   390  iap.o(i.iap_rx_handler)
+    iap_tx_handler                           0x0800f119   Thumb Code   176  iap.o(i.iap_tx_handler)
+    iap_uart_ctrl                            0x0800f1dd   Thumb Code    66  iap.o(i.iap_uart_ctrl)
+    main                                     0x0800f239   Thumb Code    16  main.o(i.main)
+    Region$$Table$$Base                      0x0800f288   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800f2a8   Number         0  anon$$obj.o(Region$$Table)
+    SystemCoreClock                          0x20000000   Data           4  system_n32g032.o(.data)
+    __initial_sp                             0x200004b0   Data           0  startup_n32g032.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0800e0c1
+
+  Load Region LR_IROM1 (Base: 0x0800e000, Size: 0x000012c4, Max: 0x00001c00, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x0800e000, Load base: 0x0800e000, Size: 0x000012a8, Max: 0x00001c00, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x0800e000   0x0800e000   0x000000c0   Data   RO            3    RESET               startup_n32g032.o
+    0x0800e0c0   0x0800e0c0   0x00000000   Code   RO         1201  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x0800e0c0   0x0800e0c0   0x00000004   Code   RO         1206    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x0800e0c4   0x0800e0c4   0x00000004   Code   RO         1209    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x0800e0c8   0x0800e0c8   0x00000000   Code   RO         1211    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x0800e0c8   0x0800e0c8   0x00000000   Code   RO         1213    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x0800e0c8   0x0800e0c8   0x00000008   Code   RO         1214    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x0800e0d0   0x0800e0d0   0x00000000   Code   RO         1216    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x0800e0d0   0x0800e0d0   0x00000000   Code   RO         1218    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x0800e0d0   0x0800e0d0   0x00000004   Code   RO         1207    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x0800e0d4   0x0800e0d4   0x0000001c   Code   RO            4    .text               startup_n32g032.o
+    0x0800e0f0   0x0800e0f0   0x0000002c   Code   RO         1204    .text               mc_p.l(uidiv.o)
+    0x0800e11c   0x0800e11c   0x00000024   Code   RO         1220    .text               mc_p.l(init.o)
+    0x0800e140   0x0800e140   0x00000010   Code   RO          243    i.FLASH_ClearFlag   n32g032_flash.o
+    0x0800e150   0x0800e150   0x00000058   Code   RO          248    i.FLASH_EraseOnePage  n32g032_flash.o
+    0x0800e1a8   0x0800e1a8   0x0000003c   Code   RO          253    i.FLASH_GetSTS      n32g032_flash.o
+    0x0800e1e4   0x0800e1e4   0x00000014   Code   RO          257    i.FLASH_Lock        n32g032_flash.o
+    0x0800e1f8   0x0800e1f8   0x00000050   Code   RO          261    i.FLASH_ProgramWord  n32g032_flash.o
+    0x0800e248   0x0800e248   0x00000018   Code   RO          265    i.FLASH_Unlock      n32g032_flash.o
+    0x0800e260   0x0800e260   0x00000028   Code   RO          266    i.FLASH_WaitForLastOpt  n32g032_flash.o
+    0x0800e288   0x0800e288   0x000001f8   Code   RO          408    i.GPIO_InitPeripheral  n32g032_gpio.o
+    0x0800e480   0x0800e480   0x0000001c   Code   RO          409    i.GPIO_InitStruct   n32g032_gpio.o
+    0x0800e49c   0x0800e49c   0x00000004   Code   RO         1049    i.HardFault_Handler  n32g032_it.o
+    0x0800e4a0   0x0800e4a0   0x00000002   Code   RO         1050    i.NMI_Handler       n32g032_it.o
+    0x0800e4a2   0x0800e4a2   0x00000002   PAD
+    0x0800e4a4   0x0800e4a4   0x00000044   Code   RO          145    i.NVIC_Init         misc.o
+    0x0800e4e8   0x0800e4e8   0x00000078   Code   RO          146    i.NVIC_SetPriority  misc.o
+    0x0800e560   0x0800e560   0x00000002   Code   RO         1051    i.PendSV_Handler    n32g032_it.o
+    0x0800e562   0x0800e562   0x00000002   PAD
+    0x0800e564   0x0800e564   0x00000020   Code   RO          566    i.RCC_EnableAPB1PeriphReset  n32g032_rcc.o
+    0x0800e584   0x0800e584   0x00000020   Code   RO          567    i.RCC_EnableAPB2PeriphClk  n32g032_rcc.o
+    0x0800e5a4   0x0800e5a4   0x00000020   Code   RO          568    i.RCC_EnableAPB2PeriphReset  n32g032_rcc.o
+    0x0800e5c4   0x0800e5c4   0x00000180   Code   RO          577    i.RCC_GetClocksFreqValue  n32g032_rcc.o
+    0x0800e744   0x0800e744   0x00000002   Code   RO         1052    i.SVC_Handler       n32g032_it.o
+    0x0800e746   0x0800e746   0x00000002   PAD
+    0x0800e748   0x0800e748   0x0000011c   Code   RO           11    i.SetSysClock       system_n32g032.o
+    0x0800e864   0x0800e864   0x00000008   Code   RO         1053    i.SysTick_Handler   n32g032_it.o
+    0x0800e86c   0x0800e86c   0x00000098   Code   RO           13    i.SystemInit        system_n32g032.o
+    0x0800e904   0x0800e904   0x00000064   Code   RO         1054    i.USART1_2_IRQHandler  n32g032_it.o
+    0x0800e968   0x0800e968   0x00000054   Code   RO          855    i.USART_ConfigInt   n32g032_usart.o
+    0x0800e9bc   0x0800e9bc   0x0000007c   Code   RO          859    i.USART_DeInit      n32g032_usart.o
+    0x0800ea38   0x0800ea38   0x00000020   Code   RO          860    i.USART_Enable      n32g032_usart.o
+    0x0800ea58   0x0800ea58   0x0000001e   Code   RO          867    i.USART_GetFlagStatus  n32g032_usart.o
+    0x0800ea76   0x0800ea76   0x00000002   PAD
+    0x0800ea78   0x0800ea78   0x0000005c   Code   RO          868    i.USART_GetIntStatus  n32g032_usart.o
+    0x0800ead4   0x0800ead4   0x000000bc   Code   RO          869    i.USART_Init        n32g032_usart.o
+    0x0800eb90   0x0800eb90   0x0000000a   Code   RO          870    i.USART_ReceiveData  n32g032_usart.o
+    0x0800eb9a   0x0800eb9a   0x00000008   Code   RO          872    i.USART_SendData    n32g032_usart.o
+    0x0800eba2   0x0800eba2   0x0000001c   Code   RO         1193    i.__ARM_common_switch8  iap.o
+    0x0800ebbe   0x0800ebbe   0x0000000e   Code   RO         1224    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x0800ebcc   0x0800ebcc   0x00000002   Code   RO         1225    i.__scatterload_null  mc_p.l(handlers.o)
+    0x0800ebce   0x0800ebce   0x0000000e   Code   RO         1226    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x0800ebdc   0x0800ebdc   0x00000018   Code   RO         1100    i.delay_decrement   systick.o
+    0x0800ebf4   0x0800ebf4   0x00000040   Code   RO         1136    i.iap_do_erase      iap.o
+    0x0800ec34   0x0800ec34   0x00000054   Code   RO         1137    i.iap_do_program    iap.o
+    0x0800ec88   0x0800ec88   0x00000020   Code   RO         1138    i.iap_do_reset      iap.o
+    0x0800eca8   0x0800eca8   0x000000e0   Code   RO         1139    i.iap_init          iap.o
+    0x0800ed88   0x0800ed88   0x000001ec   Code   RO         1140    i.iap_rx_data       iap.o
+    0x0800ef74   0x0800ef74   0x000001a4   Code   RO         1141    i.iap_rx_handler    iap.o
+    0x0800f118   0x0800f118   0x000000c4   Code   RO         1142    i.iap_tx_handler    iap.o
+    0x0800f1dc   0x0800f1dc   0x0000005c   Code   RO         1143    i.iap_uart_ctrl     iap.o
+    0x0800f238   0x0800f238   0x00000010   Code   RO         1023    i.main              main.o
+    0x0800f248   0x0800f248   0x00000040   Data   RO          589    .constdata          n32g032_rcc.o
+    0x0800f288   0x0800f288   0x00000020   Data   RO         1222    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800f2a8, Size: 0x000004b0, Max: 0x00004000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x0800f2a8   0x00000004   Data   RW           15    .data               system_n32g032.o
+    0x20000004   0x0800f2ac   0x00000004   Data   RW         1102    .data               systick.o
+    0x20000008   0x0800f2b0   0x00000014   Data   RW         1145    .data               iap.o
+    0x2000001c        -       0x00000090   Zero   RW         1144    .bss                iap.o
+    0x200000ac   0x0800f2c4   0x00000004   PAD
+    0x200000b0        -       0x00000400   Zero   RW            1    STACK               startup_n32g032.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+      1632        184          0         20        144      11382   iap.o
+        16          0          0          0          0        399   main.o
+       188         14          0          0          0       7256   misc.o
+       328         48          0          0          0       5385   n32g032_flash.o
+       532         30          0          0          0       2152   n32g032_gpio.o
+       118         12          0          0          0       2417   n32g032_it.o
+       480         42         64          0          0       6503   n32g032_rcc.o
+       568         52          0          0          0       6829   n32g032_usart.o
+        28          8        192          0       1024        676   startup_n32g032.o
+       436         54          0          4          0     240625   system_n32g032.o
+        24          4          0          4          0        850   systick.o
+
+    ----------------------------------------------------------------------
+      4358        448        288         28       1172     284474   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         8          0          0          0          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+        44          0          0          0          0         72   uidiv.o
+
+    ----------------------------------------------------------------------
+       130         16          0          0          0        140   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       130         16          0          0          0        140   mc_p.l
+
+    ----------------------------------------------------------------------
+       130         16          0          0          0        140   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      4488        464        288         28       1172     283094   Grand Totals
+      4488        464        288         28       1172     283094   ELF Image Totals
+      4488        464        288         28          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 4776 (   4.66kB)
+    Total RW  Size (RW Data + ZI Data)              1200 (   1.17kB)
+    Total ROM Size (Code + RO Data + RW Data)       4804 (   4.69kB)
+
+==============================================================================
+
