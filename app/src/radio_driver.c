@@ -1511,6 +1511,13 @@ void radio_main(void)
 			radio_dev_set_mute(FALSE);
 			audio_set_mute(AUDIO_MUTE_RADIO, FALSE);
 		}
+		
+		#if TUNER_MODEL==TUNER_SILICONLAB_SI4731
+	if(radio_dev_is_tune_error())
+	{
+			radio_set_pwr_ctrl(RADIO_STATE_PWR_ON_ING);
+	}
+#endif
 	}
 }
 

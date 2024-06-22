@@ -3,7 +3,7 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-//#define ENABLE_SWD
+#define ENABLE_SWD
 
 #ifndef ENABLE_SWD
 #define ENABLE_WWDG

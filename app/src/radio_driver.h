@@ -328,6 +328,7 @@ bool radio_dev_is_tune_status_ready(void);
 //                   2: stereo
 u8 radio_dev_get_stereo_status(void);
 
+bool radio_dev_is_tune_error(void);
 
 typedef enum
 {

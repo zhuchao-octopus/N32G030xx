@@ -68,12 +68,12 @@ void si474x_i2c_read (uint8_t* dest_addr, uint8_t len)
 //-----------------------------------------------------------------------------
 // Command that will wait for CTS before returning
 //-----------------------------------------------------------------------------
-void si474x_waitForCTS()
+bool si474x_waitForCTS()
 {
 	uint16_t i = 1000;
 	uint8_t status;
 	if (g_si474x_i2c_error>16) {
-		return;
+		return false;
 	}
 
 	do
@@ -83,6 +83,11 @@ void si474x_waitForCTS()
 		delay_us(5);
 	}while (--i && !(status & CTS));
 
+	if ((0==i) || (!(status & CTS)) || (0xFF == status)) {
+		return false;
+	}
+	
+	return true;
 //	if (0==i) {
 //		++g_si474x_i2c_error;
 //	} else {
@@ -229,6 +234,10 @@ bool radio_dev_init(void)
 	//chipRev  = (char)g_si474x_rsp[8];
 	if ( (partNumber==0xFF) || (partNumber==0) ) {
 		g_si474x_i2c_error=250;
+	}
+	else 
+	{
+		g_si474x_i2c_error = 0;
 	}
 #endif
 
@@ -499,6 +508,12 @@ bool radio_dev_rds_update(void)
 	return FALSE;
 }
 #endif
+
+
+bool radio_dev_is_tune_error()
+{
+	return !si474x_waitForCTS();
+}
 
 #endif
 
