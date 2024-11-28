@@ -88,17 +88,21 @@ void encoder_key_main(void)
 	}
 
 	encoder_key_do_scan(&g_vol_key_info, AD_VOL_ENCODER);
-//	encoder_key_do_scan(&g_tune_key_info, AD_TUNE_ENCODER);
+	//encoder_key_do_scan(&g_tune_key_info, AD_TUNE_ENCODER);
 
 }
 
-
 static const KEY_INFO g_def_panel_key[] = {
-#if 0
-	{AD_PANEL_KEY_DET_1, 0, UICC_MUTE, UICC_FAKE_POWER_OFF, KEY_STUDY_SWC_PU_LARGE},
-	{AD_PANEL_KEY_DET_1, 35, UICC_NEXT, UICC_FASTF, 0},
-	{AD_PANEL_KEY_DET_1, 48, UICC_PREV, UICC_FASTR, 0},
-	{AD_PANEL_KEY_DET_1, 91, UICC_VOLUME_UP, 0x00, KEY_STUDY_SWC_PU_LARGE},
+#if 1
+	///{AD_PANEL_KEY_DET_1, 0, UICC_MUTE, UICC_FAKE_POWER_OFF, KEY_STUDY_SWC_PU_LARGE},
+	///{AD_PANEL_KEY_DET_1, 35, UICC_NEXT, UICC_FASTF, 0},
+	///{AD_PANEL_KEY_DET_1, 48, UICC_PREV, UICC_FASTR, 0},
+	///{AD_PANEL_KEY_DET_1, 91, UICC_VOLUME_UP, 0x00, KEY_STUDY_SWC_PU_LARGE},
+	///{AD_PANEL_KEY_DET_1, 110, UICC_VOLUME_DOWN, 0x00, KEY_STUDY_SWC_PU_LARGE},
+	///{AD_PANEL_KEY_DET_1, 219, UICC_HOME, 0x00, KEY_STUDY_SWC_PU_LARGE},
+	
+  {AD_PANEL_KEY_DET_1, 0, UICC_MUTE, UICC_FAKE_POWER_OFF, KEY_STUDY_SWC_PU_LARGE},
+  {AD_PANEL_KEY_DET_1, 91, UICC_VOLUME_UP, 0x00, KEY_STUDY_SWC_PU_LARGE},
 	{AD_PANEL_KEY_DET_1, 110, UICC_VOLUME_DOWN, 0x00, KEY_STUDY_SWC_PU_LARGE},
 	{AD_PANEL_KEY_DET_1, 219, UICC_HOME, 0x00, KEY_STUDY_SWC_PU_LARGE},
 #else
@@ -132,7 +136,7 @@ static const KEY_INFO g_def_panel_key[] = {
 	{AD_PANEL_KEY_DET_1, 169, UICC_PLAY_PAUSE, 0x00, KEY_STUDY_SWC_PU_LARGE},
 	{AD_PANEL_KEY_DET_1, 196, UICC_SETUP, 0x00, KEY_STUDY_SWC_PU_LARGE},
 	{AD_PANEL_KEY_DET_1, 219, UICC_HANG, 0x00, KEY_STUDY_SWC_PU_LARGE},
-//	{AD_PANEL_KEY_DET_1, 237, UICC_NISSAN_XTRAIL_CAM_SW, 0x00, KEY_STUDY_SWC_PU_LARGE},
+	//{AD_PANEL_KEY_DET_1, 237, UICC_NISSAN_XTRAIL_CAM_SW, 0x00, KEY_STUDY_SWC_PU_LARGE},
 #endif
 };
 
@@ -384,6 +388,7 @@ static void panel_key_do_scan(u8 adc_ch)
 		}
 		break;
 	}
+    
 	if (index>=g_key_info_store.key_num) {
 		// no key detect
 		return;
@@ -393,6 +398,7 @@ static void panel_key_do_scan(u8 adc_ch)
 		g_key_handler.last_idx = index;
 		g_key_handler.key_pressed_timer = 0;
 	}
+    
 	g_key_handler.debounce_timer = 0;
 
 	++g_key_handler.key_pressed_timer;

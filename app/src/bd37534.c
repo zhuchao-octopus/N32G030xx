@@ -143,7 +143,12 @@ void audio_dev_deinit(void)
 void audio_dev_update_source(AUDIO_SOURCE src)
 {
 	g_src = src;
+	
+	if(src == AUDIO_SRC_HOST)
+	audio_set_mute_temporary(100);
+	else
 	audio_set_mute_temporary(1000);
+	
 	tm2313_update_vol_src();
 }
 

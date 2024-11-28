@@ -14,6 +14,7 @@ static void Set_Evt_Timer(uchar AlignIndex,uchar Element)
 		Evt_Timeout[Element]=EVT_TIME;
 	}
 }
+
 static void Clrt_Evt_Timer(uchar AlignIndex,uchar Element)
 {
 	if (0==AlignIndex)
@@ -21,7 +22,6 @@ static void Clrt_Evt_Timer(uchar AlignIndex,uchar Element)
 		Evt_Timeout[Element]=0;
 	}
 }
-
 
 extern void PostEvent(MODULE_NAME name,EVENT_ID ID, uword parameter)
 {

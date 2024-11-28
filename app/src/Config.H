@@ -3,7 +3,7 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-#define ENABLE_SWD
+///#define ENABLE_SWD
 
 #ifndef ENABLE_SWD
 #define ENABLE_WWDG
@@ -160,6 +160,9 @@
 //#define MCU_FIXED_VERSION "CSN2_04282021_173906_V308"
 
 #define MCU_VERSION_BASE   __DATE__ "_" __TIME__
+
+///#define MCU_VERSION_BASE   "01292024_220932"
+
 
 #if !defined(MCU_VERSION_BASE)
 #error "MCU_VERSION_BASE must be defined!"

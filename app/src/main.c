@@ -146,8 +146,10 @@ static void gpio_config(void)
 	GPIO_InitPeripheral(GPIO_AD_VOL_GRP, &GPIO_InitStructure_Analog);
 	GPIO_InitStructure_Analog.Pin = GPIO_AD_TUNE_PIN;
 	GPIO_InitPeripheral(GPIO_AD_TUNE_GRP, &GPIO_InitStructure_Analog);
+	
 	GPIO_InitStructure_Analog.Pin = GPIO_AD_PANEL_KEY_DET_1_PIN | GPIO_AD_PANEL_KEY_DET_2_PIN;
 	GPIO_InitPeripheral(GPIO_AD_PANEL_KEY_DET_GRP, &GPIO_InitStructure_Analog);
+	
 	GPIO_InitStructure_Analog.Pin = GPIO_AD_SWC_KEY_DET_1_PIN | GPIO_AD_SWC_KEY_DET_2_PIN;
 	GPIO_InitPeripheral(GPIO_AD_SWC_KEY_DET_GRP, &GPIO_InitStructure_Analog);
 
@@ -339,7 +341,6 @@ static void timer_config(void)
 
 	//	TIM_EnableCtrlPwmOutputs(TIMER_LED, ENABLE);
 	TIM_Enable(TIMER_LED, ENABLE);
-
 
 }
 
