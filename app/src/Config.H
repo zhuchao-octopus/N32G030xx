@@ -3,7 +3,7 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-///#define ENABLE_SWD
+////#define ENABLE_SWD //jtag
 
 #ifndef ENABLE_SWD
 #define ENABLE_WWDG
@@ -142,7 +142,7 @@
 #define	HIGH_VOLT_PROTECT_OFF		VOLT_17V//高压关机电压值
 #define	HIGH_VOLT_PROTECT_ON		VOLT_16V	//高压恢复电压值
 #define	LOW_VOLT_PROTECT_OFF		VOLT_8V5	//低压关机电压值
-#define	LOW_VOLT_PROTECT_ON		VOLT_9V5//低压恢复电压值
+#define	LOW_VOLT_PROTECT_ON			VOLT_9V5//低压恢复电压值
 //#define FAKE_POWER_OFF							1//假关机
 
 

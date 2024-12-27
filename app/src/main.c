@@ -668,7 +668,7 @@ static void mcu_stay_in_sleep(void)
 	GPIO_InitType	GPIO_InitStructure_Input_Float;
 	u16 			acc_on = 0;
 	u16 			acc_off = 0;
-	NVIC_InitType	NVIC_InitStructure;
+	///NVIC_InitType	NVIC_InitStructure;
 	EXTI_InitType	EXTI_InitStructure;
 
 	/* shutdown unused mcu pin & clock & power */
@@ -837,7 +837,7 @@ static void mcu_stay_in_sleep(void)
 			{
 			break;
 			}
-
+    #if 0
 		GPIO_ConfigEXTILine(GPIOF_PORT_SOURCE, GPIO_PIN_SOURCE7);
 		EXTI_InitStructure.EXTI_LineCmd = ENABLE;
 		EXTI_InitPeripheral(&EXTI_InitStructure);
@@ -846,7 +846,7 @@ static void mcu_stay_in_sleep(void)
 		NVIC_InitStructure.NVIC_IRQChannelPriority = 0x01;
 		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 		NVIC_Init(&NVIC_InitStructure);
-
+     
 		SysTick->CTRL		= 0;
 
 		//EXTI_ClrITPendBit(EXTI_LINE7);
@@ -858,7 +858,7 @@ static void mcu_stay_in_sleep(void)
 
 		// recovery system clock
 		SystemInit();
-
+    #endif
 		}
 
 	NVIC_DisableIRQ(EXTI4_15_IRQn);
@@ -881,7 +881,6 @@ static void mcu_stay_in_sleep(void)
 
 int main(void)
 {
-
 	g_first_love		= 1;
 	mcu_init();
 
@@ -900,34 +899,36 @@ int main(void)
 	delay_1ms(500);
 
 	REAL_SYS_PWR_ON;
-
-
 	BEGIN_WATCHDOG; 								//Watch Dog is enabled
-
 	g_first_love		= 0;
-
+	
+	///radio_set_pwr_ctrl(true);	
+	///radio_main();
+	///channel_main();
+	/////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////
 	for (; ; )
-		{
+	{
 		CLEAR_WATCHDOG;
 
 		if (g_mcu_in_sleep)
-			{
-#ifdef ENABLE_WWDG
+		{
+			#ifdef ENABLE_WWDG
 			watchdog_disable();
-#endif
-
+			#endif
 			mcu_stay_in_sleep();
-
-#ifdef ENABLE_WWDG
+			#ifdef ENABLE_WWDG
 			watchdog_enable();
-#endif
-
+			#endif
 			g_mcu_in_sleep		= 0;
-			}
-
-		USART_Data_Analyse();
-		LinUart_Data_Analyse();
-
+			
+			//delay_1ms(500);
+			radio_set_pwr_ctrl(true);	
+			radio_main();
+			channel_main();
+		}
+		/////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////
 		if (g_trigger_4ms)
 			{
 			g_trigger_4ms		= 0;
@@ -957,7 +958,13 @@ int main(void)
 			g_trigger_1000ms	= 0;
 			Task1sPro();
 			}
-		}
-}
+			
+		/////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////
+		USART_Data_Analyse();
+		LinUart_Data_Analyse();
+	}//	for (; ; )
+
+}//int main(void)
 
 
