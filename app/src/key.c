@@ -101,10 +101,12 @@ static const KEY_INFO g_def_panel_key[] = {
 	///{AD_PANEL_KEY_DET_1, 110, UICC_VOLUME_DOWN, 0x00, KEY_STUDY_SWC_PU_LARGE},
 	///{AD_PANEL_KEY_DET_1, 219, UICC_HOME, 0x00, KEY_STUDY_SWC_PU_LARGE},
 	
-  {AD_PANEL_KEY_DET_1, 0, UICC_MUTE, UICC_FAKE_POWER_OFF, KEY_STUDY_SWC_PU_LARGE},
-  {AD_PANEL_KEY_DET_1, 91, UICC_VOLUME_UP, 0x00, KEY_STUDY_SWC_PU_LARGE},
+  {AD_PANEL_KEY_DET_1, 0, 	UICC_MUTE, UICC_FAKE_POWER_OFF, KEY_STUDY_SWC_PU_LARGE},
+  {AD_PANEL_KEY_DET_1, 91, 	UICC_VOLUME_UP, 0x00, KEY_STUDY_SWC_PU_LARGE},
 	{AD_PANEL_KEY_DET_1, 110, UICC_VOLUME_DOWN, 0x00, KEY_STUDY_SWC_PU_LARGE},
 	{AD_PANEL_KEY_DET_1, 219, UICC_HOME, 0x00, KEY_STUDY_SWC_PU_LARGE},
+	
+	{AD_PANEL_KEY_DET_2, 0, UICC_FAKE_POWER_OFF, UICC_FAKE_POWER_OFF, KEY_STUDY_SWC_PU_LARGE},
 #else
 	{AD_PANEL_KEY_DET_2, 0, UICC_FAKE_POWER_OFF, 0x00, KEY_STUDY_SWC_PU_LARGE},
 	{AD_PANEL_KEY_DET_2, 9, UICC_BACK, UICC_HOME, KEY_STUDY_SWC_PU_LARGE},
@@ -359,18 +361,19 @@ static void panel_key_do_scan(u8 adc_ch)
 
 	adc_idle_value = panel_key_get_adc_idle_value(adc_ch, g_key_handler.study_swc_pu_type);
 	
-	if (is_ad_val_equal(adc_value, adc_idle_value)) { // no key pressed
-		// no key pressed
-		if ( (MAX_PANEL_KEY_NUM != g_key_handler.last_idx) &&
-			(adc_ch==g_key_info_store.key[g_key_handler.last_idx].adc_channel) ) {
-			// key release
-			if ( (KEY_LONG_PRESS_TIME>g_key_handler.key_pressed_timer) &&
-				(KEY_SHORT_PRESS_TIME<g_key_handler.key_pressed_timer) ) {
-				panel_key_do_send_key(g_key_handler.last_idx, FALSE);
+	if (is_ad_val_equal(adc_value, adc_idle_value)) 
+	{ 	// no key pressed
+			// no key pressed
+		if((MAX_PANEL_KEY_NUM != g_key_handler.last_idx) &&	(adc_ch==g_key_info_store.key[g_key_handler.last_idx].adc_channel)) 
+			{
+				// key release
+				if ((KEY_LONG_PRESS_TIME > g_key_handler.key_pressed_timer) && (KEY_SHORT_PRESS_TIME < g_key_handler.key_pressed_timer)) 
+					{
+						panel_key_do_send_key(g_key_handler.last_idx, FALSE);
+					}
+				g_key_handler.last_idx = MAX_PANEL_KEY_NUM;
 			}
-			g_key_handler.last_idx = MAX_PANEL_KEY_NUM;
-		}
-		return;
+			return;
 	}
 
 	for (index=0; index<g_key_info_store.key_num; index++) {
@@ -404,12 +407,14 @@ static void panel_key_do_scan(u8 adc_ch)
 	++g_key_handler.key_pressed_timer;
 
 	// do repeat press for volume control
-	if ( (UICC_VOLUME_DOWN==g_key_info_store.key[index].key_code_short) ||
-		(UICC_VOLUME_UP==g_key_info_store.key[index].key_code_short) ) {
+	if ((UICC_VOLUME_DOWN==g_key_info_store.key[index].key_code_short) || (UICC_VOLUME_UP==g_key_info_store.key[index].key_code_short)) 
+	{
 		if (0==(g_key_handler.key_pressed_timer % KEY_REPEAT_PRESS_TIME)) {
 			panel_key_do_send_key(index, FALSE);
 		}
-	} else {
+	} 
+	else
+	{
 		// do long press
 		if (KEY_LONG_PRESS_TIME==g_key_handler.key_pressed_timer) {
 			if (NO_KEY != g_key_info_store.key[index].key_code_long) {

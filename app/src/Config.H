@@ -3,7 +3,7 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-////#define ENABLE_SWD //jtag
+//////////////////////////#define ENABLE_SWD //jtag
 
 #ifndef ENABLE_SWD
 #define ENABLE_WWDG

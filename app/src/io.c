@@ -189,7 +189,7 @@ void SystemPowerContrl(ONOFF On_Off)
 	else
 	{
 		GPIO_ResetBits(GPIO_ANT_CTRL_GRP, GPIO_ANT_CTRL_PIN);
-//		GPIO_ResetBits(GPIO_FCAM_PWR_GRP, GPIO_FCAM_PWR_PIN);
+		//GPIO_ResetBits(GPIO_FCAM_PWR_GRP, GPIO_FCAM_PWR_PIN);
 		SYSTEM_POWER_CTRL_OFF;
 		if (g_kill_host) {
 			REAL_SYS_PWR_OFF;

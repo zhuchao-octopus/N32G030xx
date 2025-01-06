@@ -264,7 +264,7 @@ static uchar	Lin_Rx_Seq_Num;
 typedef struct 
 {
 	uchar			Lin_Tx_Seq_Num; 				//save the latest seq num
-	uchar * 		Ptr_Send_Buff;					//指向最新发送buff的开头
+	uchar * 	Ptr_Send_Buff;					//指向最新发送buff的开头
 } LIN_SEND_TABLE;
 
 

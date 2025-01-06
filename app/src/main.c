@@ -808,7 +808,7 @@ static void mcu_stay_in_sleep(void)
 		acc_off 			= 0;
 
 		for (; ; )
-			{
+		{
 			delay_us(2);
 
 			if (Bit_RESET == GPIO_ReadInputDataBit(GPIO_ACC_GRP, GPIO_ACC_PIN))
@@ -831,12 +831,13 @@ static void mcu_stay_in_sleep(void)
 				{
 				break;
 				}
-			}
+		}///for (; ; )
 
 		if (acc_on > 10000)
-			{
+		{
 			break;
-			}
+		}
+		
     #if 0
 		GPIO_ConfigEXTILine(GPIOF_PORT_SOURCE, GPIO_PIN_SOURCE7);
 		EXTI_InitStructure.EXTI_LineCmd = ENABLE;
@@ -859,7 +860,7 @@ static void mcu_stay_in_sleep(void)
 		// recovery system clock
 		SystemInit();
     #endif
-		}
+		}////while (1)
 
 	NVIC_DisableIRQ(EXTI4_15_IRQn);
 	EXTI_InitStructure.EXTI_LineCmd = DISABLE;
@@ -902,9 +903,11 @@ int main(void)
 	BEGIN_WATCHDOG; 								//Watch Dog is enabled
 	g_first_love		= 0;
 	
-	///radio_set_pwr_ctrl(true);	
-	///radio_main();
-	///channel_main();
+	#if 1
+	radio_set_pwr_ctrl(true);	
+	radio_main();
+	channel_main();
+	#endif
 	/////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////
 	for (; ; )
@@ -922,7 +925,7 @@ int main(void)
 			#endif
 			g_mcu_in_sleep		= 0;
 			
-			//delay_1ms(500);
+			//delay_1ms(500);not good
 			radio_set_pwr_ctrl(true);	
 			radio_main();
 			channel_main();
